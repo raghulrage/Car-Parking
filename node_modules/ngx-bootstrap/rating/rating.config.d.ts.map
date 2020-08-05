@@ -1,0 +1,1 @@
+{"version":3,"file":"rating.config.d.ts","sources":["rating.config.d.ts"],"names":[],"mappings":"AAAA;;AACA;AACA;AACA;;;AACA","sourcesContent":["/** Default values provider for rating */\nexport declare class RatingConfig {\n    /** aria label for rating */\n    ariaLabel: string;\n}\n"]}

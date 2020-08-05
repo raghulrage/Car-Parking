@@ -1,0 +1,1 @@
+{"version":3,"file":"tabset.config.d.ts","sources":["tabset.config.d.ts"],"names":[],"mappings":";AAAA;AACA;AACA;AACA;AACA;;;AACA","sourcesContent":["export declare class TabsetConfig {\n    /** provides default navigation context class: 'tabs' or 'pills' */\n    type: string;\n    /** aria label for tab list */\n    ariaLabel: string;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"bs-dropdown.module.d.ts","sources":["bs-dropdown.module.d.ts"],"names":[],"mappings":"AAAA;;;;;;AACA;AACA,kCAAkC,qCAAmB;;;AACrD","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class BsDropdownModule {\n    static forRoot(config?: any): ModuleWithProviders;\n}\n"]}

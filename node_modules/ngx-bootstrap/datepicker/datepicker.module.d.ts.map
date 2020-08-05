@@ -1,0 +1,1 @@
+{"version":3,"file":"datepicker.module.d.ts","sources":["datepicker.module.d.ts"],"names":[],"mappings":"AAAA;;;;;;;;;AACA;AACA,sBAAsB,qCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class DatepickerModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

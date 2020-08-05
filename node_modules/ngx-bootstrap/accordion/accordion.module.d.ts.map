@@ -1,0 +1,1 @@
+{"version":3,"file":"accordion.module.d.ts","sources":["accordion.module.d.ts"],"names":[],"mappings":"AAAA;;;;;;AACA;AACA,sBAAsB,oCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class AccordionModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

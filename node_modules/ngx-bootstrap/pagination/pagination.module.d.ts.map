@@ -1,0 +1,1 @@
+{"version":3,"file":"pagination.module.d.ts","sources":["pagination.module.d.ts"],"names":[],"mappings":"AAAA;;;;;AACA;AACA,sBAAsB,qCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class PaginationModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

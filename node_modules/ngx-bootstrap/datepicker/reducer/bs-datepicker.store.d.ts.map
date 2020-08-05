@@ -1,0 +1,1 @@
+{"version":3,"file":"bs-datepicker.store.d.ts","sources":["bs-datepicker.store.d.ts"],"names":[],"mappings":"AAAA;AACA;;AACA;AACA;;;AACA","sourcesContent":["import { MiniStore } from 'ngx-bootstrap/mini-ngrx';\nimport { BsDatepickerState } from './bs-datepicker.state';\nexport declare class BsDatepickerStore extends MiniStore<BsDatepickerState> {\n    constructor();\n}\n"]}

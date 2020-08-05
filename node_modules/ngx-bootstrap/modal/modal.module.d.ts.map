@@ -1,0 +1,1 @@
+{"version":3,"file":"modal.module.d.ts","sources":["modal.module.d.ts"],"names":[],"mappings":"AAAA;;;;;AACA;AACA,sBAAsB,gCAAmB;AACzC,uBAAuB,gCAAmB;;;AAC1C","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class ModalModule {\n    static forRoot(): ModuleWithProviders;\n    static forChild(): ModuleWithProviders;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"timepicker.store.d.ts","sources":["timepicker.store.d.ts"],"names":[],"mappings":"AAAA;AACA;;AACA;AACA;;;AACA","sourcesContent":["import { TimepickerState } from './timepicker.reducer';\nimport { MiniStore } from 'ngx-bootstrap/mini-ngrx';\nexport declare class TimepickerStore extends MiniStore<TimepickerState> {\n    constructor();\n}\n"]}

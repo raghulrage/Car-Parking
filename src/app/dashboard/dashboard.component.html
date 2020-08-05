@@ -1,0 +1,17 @@
+<app-header-login></app-header-login>
+<div class="row justify-content-center">
+    <div class="col-md-2 p-0 sidebar d-flex align-items-center flex-column">
+        <div>
+            <button routerLink="/dashboard" class="button">Available Slots</button>
+        </div>
+        <div>
+            <button routerLink="/dashboard/bookings" class="button">My Bookings</button>
+        </div>
+        <!-- <div>
+            <button routerLink="/dashboard/bookslot" class="button">Book Slot</button>
+        </div> -->
+    </div>
+    <div class="col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

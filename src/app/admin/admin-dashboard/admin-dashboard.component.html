@@ -1,0 +1,17 @@
+<!-- <app-header-login></app-header-login> -->
+<div class="row justify-content-center">
+    <div class="col-md-2 p-0 sidebar d-flex align-items-center flex-column">
+        <div>
+            <button routerLink="/admin-dashboard" class="button">Add Location</button>
+        </div>
+        <div>
+            <button routerLink="/admin-dashboard/add-slot" class="button">Add Slot</button>
+        </div>
+        <div>
+            <button routerLink="/admin-dashboard/allbookings" class="button">All Bookings</button>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

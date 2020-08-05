@@ -1,0 +1,1 @@
+{"version":3,"file":"ngx-bootstrap-chronos.d.ts","sources":["ngx-bootstrap-chronos.d.ts"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\nexport * from './public_api';\nexport { createDate as ɵa } from './create/date-from-array';\n"]}

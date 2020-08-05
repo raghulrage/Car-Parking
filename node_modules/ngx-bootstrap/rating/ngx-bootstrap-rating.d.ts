@@ -1,0 +1,7 @@
+/**
+ * Generated bundle index. Do not edit.
+ */
+export * from './public_api';
+export { RATING_CONTROL_VALUE_ACCESSOR as ɵa } from './rating.component';
+
+//# sourceMappingURL=ngx-bootstrap-rating.d.ts.map

@@ -1,0 +1,62 @@
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card " >
+        <div class="row " style="background-color: #ff4f5a;color: white;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>My Bookings</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-md-12 overflow-auto" style="height: 35rem;">
+                        <div class="accordion" id="accordionExample">
+                            <div *ngIf='show'>
+                                <h2>
+                                    No Bookings Found...
+                                </h2>
+                                <button class="button" routerLink='/dashboard' > Book Now</button>
+                            </div>
+                            <div *ngIf='!show'>
+                                <div *ngFor='let booking of bookings$'  class="card">
+                                    <div class="card-header" id="headingTwo">
+                                          <div class="row">
+                                              <div class="col-md-3">
+                                                  <h3>{{booking.locationid}}</h3>
+                                              </div>
+                                              <div class="col-md-7">
+                                                  <h3>{{booking.date}}</h3>
+                                            </div>
+                                                <div class="col-md-2">
+                                                  <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                   View Details
+                                                   </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                  Location: location1 <br> 
+                                                  Vehicle Type: Two wheeler <br> 
+                                                  Duration: {{booking.duration}} hours <br> 
+                                                  <div *ngIf="booking.paid != 0">
+                                                    Cost: {{booking.cost}} rupees
+                                                  </div>
+                                                </div>
+                                                <div class="col" *ngIf='booking.paid == 0'>
+                                                  <button class="button" (click) = 'endBooking(booking.bookingid)'> End Book</button>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"bs-datepicker-inline.config.d.ts","sources":["bs-datepicker-inline.config.d.ts"],"names":[],"mappings":"AAAA;;AACA;;;AACA","sourcesContent":["import { BsDatepickerConfig } from './bs-datepicker.config';\nexport declare class BsDatepickerInlineConfig extends BsDatepickerConfig {\n}\n"]}

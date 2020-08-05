@@ -1,0 +1,1 @@
+{"version":3,"file":"buttons.module.d.ts","sources":["buttons.module.d.ts"],"names":[],"mappings":"AAAA;;;;;AACA;AACA,sBAAsB,kCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class ButtonsModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"tabs.module.d.ts","sources":["tabs.module.d.ts"],"names":[],"mappings":"AAAA;;;;;;;AACA;AACA,sBAAsB,+BAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class TabsModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

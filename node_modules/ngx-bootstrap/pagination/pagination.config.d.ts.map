@@ -1,0 +1,1 @@
+{"version":3,"file":"pagination.config.d.ts","sources":["pagination.config.d.ts"],"names":[],"mappings":"AAAA;AACA;;AACA;AACA;AACA;;;AACA","sourcesContent":["import { ConfigModel, PagerModel } from './models';\n/** Provides default values for Pagination and pager components */\nexport declare class PaginationConfig {\n    main: ConfigModel;\n    pager: PagerModel;\n}\n"]}

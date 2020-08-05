@@ -1,0 +1,1 @@
+{"version":3,"file":"bs-current-date-view.component.d.ts","sources":["bs-current-date-view.component.d.ts"],"names":[],"mappings":";AAAA;AACA;;;AACA","sourcesContent":["export declare class BsCurrentDateViewComponent {\n    title: string;\n}\n"]}

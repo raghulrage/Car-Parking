@@ -1,0 +1,1 @@
+{"version":3,"file":"bs-daterangepicker.config.d.ts","sources":["bs-daterangepicker.config.d.ts"],"names":[],"mappings":"AAAA;;AACA;AACA;;;AACA","sourcesContent":["import { BsDatepickerConfig } from './bs-datepicker.config';\nexport declare class BsDaterangepickerConfig extends BsDatepickerConfig {\n    displayMonths: number;\n}\n"]}

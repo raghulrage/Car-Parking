@@ -1,0 +1,15 @@
+.button{
+    margin-left: 7px;
+    margin-right: 7px;
+    border: none;
+    width: 120px;
+    color: white;
+    height: 35px;
+    background-color: #ff4f5a;
+    font-weight: 900;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

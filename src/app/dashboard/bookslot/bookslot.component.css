@@ -1,0 +1,90 @@
+.formwrapper{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+.button{
+    border: none;
+    width: 220px;
+    margin-top: 10px;
+    color: white;
+    height: 35px;
+    background-color: #ff4f5a;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+
+.input{
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #1b2f36;
+    color: black;
+    transition: all .2s ease-in-out;
+}
+
+.input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ff4f5a;   
+}
+
+.button-slot{
+    border: none;
+    width: 120px;
+    margin-top: 10px;
+    color: white;
+    height: 35px;
+    background-color: #ff4f5a;
+    font-weight: 900;
+    border-radius: 5px;
+}
+.button-slot:focus{
+    border: none;
+    width: 120px;
+    margin-top: 10px;
+    color: white;
+    height: 35px;
+    background-color: #17a2b8;
+    font-weight: 900;
+    border-radius: 5px;
+}
+.button-slot:disabled{
+    border: none;
+    width: 120px;
+    margin-top: 10px;
+    color: #000;
+    height: 35px;
+    background-color: #b5aeae;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + #slot {
+    background: hsla(150, 75%, 50%, 1);
+    color: hsla(215, 0%, 100%, 1);
+    box-shadow: 0px 0px 10px hsla(150, 100%, 50%, 0.75);
+
+  }
+  input[type = "radio"]:disabled + #slot{
+    color: hsla(150, 5%, 75%, 1);
+    border-color: hsla(150, 5%, 75%, 1);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  #slot {
+    padding: 5px;
+    display: block;
+    background: white;
+    border: 2px solid hsla(150, 75%, 50%, 1);
+    text-align: center;
+    box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+    cursor: pointer;
+  }     
+ 

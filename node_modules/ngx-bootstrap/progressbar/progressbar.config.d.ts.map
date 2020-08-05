@@ -1,0 +1,1 @@
+{"version":3,"file":"progressbar.config.d.ts","sources":["progressbar.config.d.ts"],"names":[],"mappings":";AAAA;AACA;AACA;AACA;AACA;;;AACA","sourcesContent":["export declare class ProgressbarConfig {\n    /** if `true` changing value of progress bar will be animated */\n    animate: Boolean;\n    /** maximum total value of progress element */\n    max: number;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"typeahead.module.d.ts","sources":["typeahead.module.d.ts"],"names":[],"mappings":"AAAA;;;;;AACA;AACA,sBAAsB,oCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class TypeaheadModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

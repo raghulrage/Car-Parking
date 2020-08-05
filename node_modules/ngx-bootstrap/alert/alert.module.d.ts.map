@@ -1,0 +1,1 @@
+{"version":3,"file":"alert.module.d.ts","sources":["alert.module.d.ts"],"names":[],"mappings":"AAAA;;;;AACA;AACA,sBAAsB,gCAAmB;;;AACzC","sourcesContent":["import { ModuleWithProviders } from '@angular/core';\nexport declare class AlertModule {\n    static forRoot(): ModuleWithProviders;\n}\n"]}

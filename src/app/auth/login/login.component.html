@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-md-12 wrapper d-flex justify-content-center align-items-center" style="height:95vh">
+        <div class="row d-flex justify-content-center align-items-center formwrapper card">
+            <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()">
+                <div class="col-md-12 mt-4 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <button class="button" routerLink="/signup">Sign Up </button>
+                        <button class="button" routerLink="/login">Login</button>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control" formControlName="email" [ngClass]="{ 'is-invalid':form.get('email').touched && form.get('email').invalid}" name="email" type="email" placeholder="Email" autocomplete="off" required>
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.get('email').errors?.required">
+                                This Field is required!!
+                            </div>
+                            <div *ngIf="form.get('email').errors?.email">
+                                Enter Valid Email Address!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control" formControlName="password" [ngClass]="{ 'is-invalid':form.get('password').touched && form.get('password').invalid }" type="password" placeholder="Password" required>
+                        <div class="invalid-feedback">
+                            <div>
+                                This Field is required!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="mt-4">
+                        <p class="danger"><button style="border:none;background-color: transparent;color: #ff4f5a;">Forgot Password ?</button></p>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2 mb-5 d-flex flex-row justify-content-center">
+                    <div class="m-1 mt-4">
+                        <button class="button" type="submit" [disabled]="!form.valid" >Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
