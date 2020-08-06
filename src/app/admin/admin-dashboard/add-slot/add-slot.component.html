@@ -10,24 +10,77 @@
             <div class="col-md-12">
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <div class="col-md-12 d-flex flex-row justify-content-center">
-                            <div class="m-1">
-                                <input class="input" type="location" placeholder="Location Id" required>
-                            </div> 
-                        </div>
-                        <div class="col-md-12 d-flex flex-row justify-content-center">
-                            <div class="m-1">
-                                <input class="input" type="slotid" placeholder="Slot Id" required>
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()" class="card m-2">
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Location:</h3></label>
+                                        <select class="form-control" formControlName="locationid" [ngClass]="{ 'is-invalid':form.get('locationid').touched && form.get('locationid').invalid}" name="locationid">
+                                          <option *ngFor='let location of locations$' value="{{location.locationid}}">{{location.locationid}}. {{location.location_name}}</option>
+                                        </select>                                    
+                                        <div class="invalid-feedback">
+                                            <div>
+                                                This Field is required!!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
                             </div>
-                        </div>
-                        <div class="col-md-12 d-flex flex-row justify-content-center">
-                            <div class="m-1">
-                                <input class="input" type="slotno" placeholder="Slot Number" required>
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="slotid" [ngClass]="{ 'is-invalid':form.get('slotid').touched && form.get('slotid').invalid}" name="slotid" type="text" placeholder="Slot ID"  autocomplete="off" required>
+                                    <div class="invalid-feedback">
+                                        <div>
+                                            This Field is required!!
+                                        </div>
+                                    </div>
+                                </div> 
                             </div>
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="slotno" [ngClass]="{ 'is-invalid':form.get('slotno').touched && form.get('slotno').invalid}" name="slotno" type="text" placeholder="Slot Number" required>
+                                    <div class="invalid-feedback">
+                                        <div>
+                                            This Field is required!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2 mb-2 ">
+                                <div class="m-1 mt-4">
+                                    <button class="button" type="submit" [disabled]="!form.valid">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="m-2">
+                            <h3 class="font-weight-bold">Slots Available:</h3>
                         </div>
-                        <div class="col-md-12 mt-2 mb-5 d-flex flex-row justify-content-center">
-                            <div class="m-1 mt-4">
-                                <button class="button">Add Slot</button>
+                        <div class="card m-2 slots">
+                            <div class="row p-2">
+                                <div class="col-2">
+                                    <b>Location ID</b>
+                                </div>
+                                <div class="col-4">
+                                   <b>Slot ID</b>
+                                </div>
+                                <div class="col-4">
+                                    <b>Slot Number</b>
+                                 </div>
+                            </div>
+                            <hr class="m-1">
+                            <div class="row p-2" *ngFor='let slot of slots$'>
+                                <div class="col-2" >
+                                    {{slot.locationid}}
+                                </div>
+                                <div class="col-4">
+                                    {{slot.slotid}}
+                                </div>
+                                <div class="col-4">
+                                    {{slot.slotno}}
+                                </div>
                             </div>
                         </div>
                     </div>

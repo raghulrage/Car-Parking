@@ -11,12 +11,6 @@
                 <div class="row mb-3">
                     <div class="col-md-12 overflow-auto" style="height: 35rem;">
                         <div class="accordion" id="accordionExample">
-                            <div *ngIf='show'>
-                                <h2>
-                                    No Bookings Found...
-                                </h2>
-                                <button class="button" routerLink='/dashboard' > Book Now</button>
-                            </div>
                             <div *ngIf='!show'>
                                 <div *ngFor='let booking of bookings$'  class="card">
                                     <div class="card-header" id="headingTwo">
@@ -53,6 +47,12 @@
                                     </div>
                                 </div>
                             </div>  
+                            <div *ngIf='show'>
+                                <h2>
+                                    No Bookings Found...
+                                </h2>
+                                <button class="button" routerLink='/dashboard' > Book Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>

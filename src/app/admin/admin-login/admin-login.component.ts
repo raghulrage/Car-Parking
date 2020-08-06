@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -13,11 +14,11 @@ export class AdminLoginComponent implements OnInit {
     password : new FormControl('', Validators.required)
   })
   
-  constructor() { }
+  constructor(private route : Router) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
-
+    this.route.navigate(['admin-dashboard'])
   }
 }

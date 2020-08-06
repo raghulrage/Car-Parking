@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LocationsService } from 'src/app/services/locations.service';
+import { Locations } from 'src/app/models/locations.model';
 
 @Component({
   selector: 'app-add-location',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddLocationComponent implements OnInit {
 
-  constructor() { }
+  form = new FormGroup({
+    location_name : new FormControl('', Validators.required),
+    area : new FormControl('', Validators.required)
+  })
+  
+  constructor(private locationService: LocationsService) { }
+
+  locations$ : Locations[];
 
   ngOnInit(): void {
+    this.loadLocations();
   }
 
+   onSubmit(){
+    this.locationService.addLocation(JSON.stringify(this.form.value))
+    .subscribe((data => {
+      if(data == true){
+        alert("Location Added")
+      }
+      else{
+        alert('Something went wrong')
+      }
+    }))
+   }
+
+   loadLocations(){
+    return this.locationService.getLocations()
+    .subscribe(data => this.locations$ = data)
+  }
 }

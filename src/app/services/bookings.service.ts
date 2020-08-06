@@ -18,6 +18,10 @@ export class BookingsService {
 
   constructor(private _http: HttpClient) { }
 
+  getAllBookings(){
+    return this._http.get<Bookings[]>(this.apiUrl+'/bookings/allBookings')
+  }
+
   getBookings(email){
     return this._http.get<Bookings[]>(this.apiUrl+'/bookings/getByUser/'+email);
   }
@@ -32,4 +36,5 @@ export class BookingsService {
   endBooking(bookingid){
     return this._http.get<Boolean>(this.apiUrl+'/bookings/endBooking/'+bookingid);
   }
+
 }

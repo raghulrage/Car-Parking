@@ -1,1 +1,51 @@
-<p>allbookings works!</p>
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card" >
+        <div class="row " style="background-color: #ff4f5a;color: white;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>All Bookings</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead class="thead">
+                      <tr>
+                        <th scope="col">Booking ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Vehicle Type</th>
+                        <th scope="col">Vehicle No</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Location ID</th>
+                        <th scope="col">Slot ID</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor='let booking of AllBookings$'>
+                        <th scope="row">{{booking.bookingid}}</th>
+                        <td>{{booking.email}}</td>
+                        <td>{{booking.vehicle_type}}</td>
+                        <td>{{booking.vehicle_no}}</td>
+                        <td>{{booking.date}}</td>
+                        <td>{{booking.time}}</td>
+                        <td>{{booking.duration}}</td>
+                        <td>{{booking.cost}}</td>
+                        <td>{{booking.locationid}}</td>
+                        <td>{{booking.slotid}}</td>
+                        <div *ngIf='booking.paid == 1'>
+                          <td class="text-success">Yes</td>
+                        </div>
+                        <div *ngIf='booking.paid == 0'>
+                          <td class="text-danger">No</td>
+                        </div>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
