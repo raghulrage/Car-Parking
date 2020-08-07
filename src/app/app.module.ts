@@ -16,6 +16,7 @@ import { BookingsComponent } from './dashboard/bookings/bookings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookslotComponent } from './dashboard/bookslot/bookslot.component';
 
+import { AdminService} from './services/admin.service';
 import { LocationsService } from './services/locations.service';
 import { BookingsService } from './services/bookings.service';
 import { VehicleService } from './services/vehicle.service';
@@ -28,6 +29,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AddLocationComponent } from './admin/admin-dashboard/add-location/add-location.component';
 import { AddSlotComponent } from './admin/admin-dashboard/add-slot/add-slot.component';
 import { AllbookingsComponent } from './admin/admin-dashboard/allbookings/allbookings.component';
+import { SlotsService } from './services/slots.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,7 @@ import { AllbookingsComponent } from './admin/admin-dashboard/allbookings/allboo
     NoopAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [LocationsService, BookingsService, VehicleService, UsersService],
+  providers: [LocationsService, BookingsService, VehicleService, UsersService, SlotsService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

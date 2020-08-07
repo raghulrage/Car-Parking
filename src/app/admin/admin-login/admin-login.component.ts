@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,15 +11,32 @@ import { Router } from '@angular/router';
 export class AdminLoginComponent implements OnInit {
 
   form = new FormGroup({
-    email : new FormControl('', [Validators.required, Validators.email]),
+    adminid : new FormControl('', Validators.required),
     password : new FormControl('', Validators.required)
   })
   
-  constructor(private route : Router) { }
+  constructor(private route : Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    this.route.navigate(['admin-dashboard'])
+    var loginJson = JSON.stringify(this.form.value);
+    this.adminService.loginCheck(loginJson)
+    .subscribe((data => {
+      if(data == true){
+      alert("Login successful");
+      var jsonData = JSON.parse(loginJson);
+      this.storeLogin(jsonData['email']);
+      this.route.navigate(['/admin-dashboard']);
+      
+      }
+      else{
+        alert("Invalid Login"); 
+      }
+    }))
+  }
+
+  storeLogin(email){
+    sessionStorage.setItem('admin',email);
   }
 }

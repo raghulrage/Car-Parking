@@ -24,11 +24,10 @@ export class LoginComponent implements OnInit {
     this.usersService.loginCheck(loginJson)
     .subscribe((data => {
       if(data == true){
-      alert("Login successful");
-      var jsonData = JSON.parse(loginJson);
-      this.storeLogin(jsonData['email']);
-      this.router.navigate(['/dashboard']);
-      
+        alert("Login successful");
+        var jsonData = JSON.parse(loginJson);
+        this.storeLogin(jsonData['email']);
+        this.router.navigate(['/dashboard']);
       }
       else{
         alert("Invalid Login"); 
