@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <h4>ID: Location Name</h4>
+                        <h4>ID: {{locationid}}</h4>
                         <form class="card" name="bookingForm">
                             <!-- select vehicle    -->
                             <div class="col-md-12 m-2">
@@ -33,11 +33,6 @@
 
                             <!-- select date and time -->
                             <div class="col-md-12 mt-2 mb-3">
-                                <div class="row m-2">
-                                   <div> 
-                                        Select Date: <input type="date" [(ngModel)]="bookingdetails.date" BsDatepickerModule autocomplete="off" name="date" id="datepicker" />
-                                    </div>
-                                </div>
                                 <div class="row m-2">
                                     <div>
                                         Select Time: <input type="time" id="time" [(ngModel)]="bookingdetails.time" name="time">
@@ -84,7 +79,7 @@
                                             <input type="reset" class="button" value="Reset">
                                         </div>
                                         <div class="col">
-                                            <button class="button" (click)='addBooking()'>Book Slot</button>
+                                            <button class="button"  (click)='addBooking()'>Book Slot</button>
                                         </div>
                                     </div>                                    
                                 </div>
@@ -98,14 +93,3 @@
         </div>
     </div>
 </div>
-
-<!-- <script>
-    jQuery(document).ready(function($) {
-        $("#datepicker").datepicker({ startDate: new Date()});
-    });
-</script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script> -->

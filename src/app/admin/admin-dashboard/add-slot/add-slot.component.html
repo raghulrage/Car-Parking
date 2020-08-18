@@ -31,6 +31,7 @@
                             <div class="col-md-12">
                                 <div class="m-1">
                                     <input class="input form-control" formControlName="slotid" [ngClass]="{ 'is-invalid':form.get('slotid').touched && form.get('slotid').invalid}" name="slotid" type="text" placeholder="Slot ID"  autocomplete="off" required>
+                                    <small>Format: slotid + slot + slotno</small>
                                     <div class="invalid-feedback">
                                         <div>
                                             This Field is required!!
@@ -41,6 +42,7 @@
                             <div class="col-md-12 ">
                                 <div class="m-1">
                                     <input class="input form-control" formControlName="slotno" [ngClass]="{ 'is-invalid':form.get('slotno').touched && form.get('slotno').invalid}" name="slotno" type="text" placeholder="Slot Number" required>
+                                    <small>Format: Slot + slotno</small>
                                     <div class="invalid-feedback">
                                         <div>
                                             This Field is required!!

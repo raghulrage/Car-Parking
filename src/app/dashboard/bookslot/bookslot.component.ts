@@ -5,6 +5,7 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 import { Vehicle } from 'src/app/models/vehicle.model';
 import { SlotsService } from 'src/app/services/slots.service';
 import { Slots } from 'src/app/models/slots.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-bookslot',
   templateUrl: './bookslot.component.html',
@@ -15,19 +16,19 @@ export class BookslotComponent implements OnInit {
     vehicles$: Vehicle[];
     slots$: Slots[];
     locationid = this.actRoute.snapshot.params['locationid'];
+    currentDate = new Date();
+    date = this.currentDate.getDate() + '-' + this.currentDate.getMonth() + '-' + this.currentDate.getFullYear()
 
   @Input() bookingdetails = {
     'email':'',
-    'fullname':'',
     'locationid':'',
     'vehicle_type':'',
     'duration':0,
     'time':'',
     'slotid':'',
-    'date':'',
+    'date': this.date,
     'vehicle_no':''
   }
-
   constructor(
     private bookings:BookingsService, 
     private slotsService: SlotsService, 
@@ -51,6 +52,11 @@ export class BookslotComponent implements OnInit {
   }
 
   addBooking(){
+
+    if(this.bookingdetails.vehicle_no == '' || this.bookingdetails.vehicle_type == '' || this.bookingdetails.slotid == '' || this.bookingdetails.duration == 0, this.bookingdetails.time == ''){
+      alert('Kindly fill all the data')
+      return
+    } 
     this.bookings.addBooking(this.locationid, this.bookingdetails)
     .subscribe((data:{}) => {
       alert('Slot Booked');

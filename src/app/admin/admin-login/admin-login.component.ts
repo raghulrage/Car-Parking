@@ -14,7 +14,6 @@ export class AdminLoginComponent implements OnInit {
     adminid : new FormControl('', Validators.required),
     password : new FormControl('', Validators.required)
   })
-  
   constructor(private route : Router, private adminService: AdminService) { }
 
   ngOnInit(): void {

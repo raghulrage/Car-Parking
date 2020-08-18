@@ -20,7 +20,6 @@ export class BookingsComponent implements OnInit {
   ngOnInit() {
     this.checkLogin();
     this.getBookingById();
-    this.checkBookingFn();
     
   }
 

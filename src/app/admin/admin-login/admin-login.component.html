@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-md-12 d-flex flex-row justify-content-center">
                     <div class="m-1">
-                        <input class="input form-control" formControlName="adminid" [ngClass]="{ 'is-invalid':form.get('adminid').touched && form.get('adminid').invalid}" name="adminid" type="email" placeholder="Email" autocomplete="off" required>
+                        <input class="input form-control" formControlName="adminid" [ngClass]="{ 'is-invalid':form.get('adminid').touched && form.get('adminid').invalid}" name="adminid" type="email" placeholder="Admin ID" autocomplete="off" required>
                         <div class="invalid-feedback">
                             <div *ngIf="form.get('adminid').errors?.required">
                                 This Field is required!!

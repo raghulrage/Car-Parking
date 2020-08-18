@@ -37,10 +37,10 @@
                         <td>{{booking.locationid}}</td>
                         <td>{{booking.slotid}}</td>
                         <div *ngIf='booking.paid == 1'>
-                          <td class="text-success">Yes</td>
+                          <td class="text-success">Booking Ended</td>
                         </div>
                         <div *ngIf='booking.paid == 0'>
-                          <td class="text-danger">No</td>
+                          <td class="text-danger">Booking ongoing</td>
                         </div>
                       </tr>
                     </tbody>
