@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +13,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AddLocationComponent } from './admin/admin-dashboard/add-location/add-location.component';
 import { AddSlotComponent } from './admin/admin-dashboard/add-slot/add-slot.component';
 import { AllbookingsComponent } from './admin/admin-dashboard/allbookings/allbookings.component';
+import { AddVehicleComponent } from './admin/admin-dashboard/add-vehicle/add-vehicle.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -33,7 +33,8 @@ const routes: Routes = [
   children:[
     {path:'',component: AddLocationComponent},
     {path:'add-slot', component: AddSlotComponent},
-    {path:'allbookings', component: AllbookingsComponent}
+    {path:'allbookings', component: AllbookingsComponent},
+    {path: 'add-vehicle', component: AddVehicleComponent}
   ]}
 ];
 

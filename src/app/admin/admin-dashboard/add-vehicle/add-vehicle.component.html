@@ -1,0 +1,75 @@
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card" >
+        <div class="row " style="background-color: #ff4f5a;color: white;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>Add Vehicle</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()" class="card m-2">
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="vehicle_type" [ngClass]="{ 'is-invalid':form.get('vehicle_type').touched && form.get('vehicle_type').invalid}" name="vehicle_type" type="text" placeholder="Vehicle Type"  autocomplete="off" required>
+                                    <div class="invalid-feedback">
+                                        <div>
+                                            This Field is required!!
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="cost" [ngClass]="{ 'is-invalid':form.get('cost').touched && form.get('cost').invalid}" name="cost" type="text" placeholder="Price per hour" autocomplete="off" required>
+                                    <div class="invalid-feedback">
+                                        <div>
+                                            This Field is required!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2 mb-2 ">
+                                <div class="m-1 mt-4">
+                                    <button class="button" type="submit" [disabled]="!form.valid">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="m-2">
+                            <h3 class="font-weight-bold">Vehicle Available:</h3>
+                        </div>
+                        <div class="card m-2 slots">
+                            <div class="row p-2">
+                                <div class="col-2">
+                                    <b>Vehicle ID</b>
+                                </div>
+                                <div class="col-4">
+                                   <b>Vehicle Type</b>
+                                </div>
+                                <div class="col-4">
+                                    <b>Price per hour</b>
+                                 </div>
+                            </div>
+                            <hr class="m-1">
+                            <div class="row p-2" *ngFor='let vehicle of vehicles$'>
+                                <div class="col-2" >
+                                    {{vehicle.vehicleid}}
+                                </div>
+                                <div class="col-4">
+                                    {{vehicle.vehicle_type}}
+                                </div>
+                                <div class="col-4">
+                                    {{vehicle.cost}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class VehicleController {
 	@Autowired
 	private VehicleService service;
 	
 	@GetMapping("/vehicle")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public List<Vehicle> list(){
 		return service.listAll();
 	}

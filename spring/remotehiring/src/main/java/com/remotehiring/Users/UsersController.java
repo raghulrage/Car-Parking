@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
 	
 	@Autowired
@@ -27,7 +28,6 @@ public class UsersController {
 	}
 	
 	@GetMapping("/users/{email}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Users> get(@PathVariable String email) {
 		try {
 			Users users =  service.get(email);
@@ -39,7 +39,6 @@ public class UsersController {
 	}
 	
 	@PostMapping("/users/signup")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Boolean> add(@RequestBody Users users) {
 		if(service.checkuser(users.getEmail()) == true) {
 			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
@@ -51,7 +50,6 @@ public class UsersController {
 	}
 	
 	@GetMapping("users/getname/{email}")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public String getUser(@PathVariable String email) {
 		String mail = service.get(email).getFullname();
 		return mail;
@@ -77,7 +75,6 @@ public class UsersController {
 
 	
 	@PostMapping("users/login")
-	@CrossOrigin(origins = "http://localhost:4200")
 	public boolean check(@RequestBody Users users) {
 		return service.checklogin(users.getEmail(), users.getPassword());
 		

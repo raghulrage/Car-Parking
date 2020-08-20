@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +29,7 @@ import { AddLocationComponent } from './admin/admin-dashboard/add-location/add-l
 import { AddSlotComponent } from './admin/admin-dashboard/add-slot/add-slot.component';
 import { AllbookingsComponent } from './admin/admin-dashboard/allbookings/allbookings.component';
 import { SlotsService } from './services/slots.service';
+import { AddVehicleComponent } from './admin/admin-dashboard/add-vehicle/add-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -49,14 +49,14 @@ import { SlotsService } from './services/slots.service';
     AdminDashboardComponent,
     AddLocationComponent,
     AddSlotComponent,
-    AllbookingsComponent
+    AllbookingsComponent,
+    AddVehicleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BsDatepickerModule.forRoot(),
     NoopAnimationsModule,
     ReactiveFormsModule
   ],

@@ -10,8 +10,6 @@ public class Users {
 	private String mobno;
 	private String password;
 
-
-
 	public Users() {
 	}
 
