@@ -42,6 +42,9 @@
                                                 <div class="col" *ngIf='booking.paid == 0'>
                                                   <button class="button" (click) = 'endBooking(booking.bookingid)'> End Book</button>
                                                 </div>
+                                                <div class="col" *ngIf='booking.paid != 0'>
+                                                    <p class="text-success font-weight-bold">Booking Completed</p>
+                                                  </div>
                                             </div>  
                                         </div>
                                     </div>

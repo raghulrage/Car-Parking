@@ -16,6 +16,7 @@ import { AllbookingsComponent } from './admin/admin-dashboard/allbookings/allboo
 import { AddVehicleComponent } from './admin/admin-dashboard/add-vehicle/add-vehicle.component';
 
 const routes: Routes = [
+  {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'dashboard',component:DashboardComponent,
@@ -24,7 +25,6 @@ const routes: Routes = [
     {path:'bookings',component:BookingsComponent},
     {path:'bookslot/:locationid',component:BookslotComponent}
   ]},
-  {path:'',component:HomeComponent},
   {path:'admin',component: AdminComponent,
   children:[
     {path:'',component:AdminLoginComponent}

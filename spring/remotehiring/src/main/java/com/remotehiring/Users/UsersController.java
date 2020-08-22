@@ -1,7 +1,11 @@
 package com.remotehiring.Users;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +18,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.remotehiring.Mail.MailService;
+
+import freemarker.template.TemplateException;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
@@ -21,6 +29,8 @@ public class UsersController {
 	@Autowired
 	private UsersService service;
 
+	@Autowired
+	private MailService mailservice;
 	
 	@GetMapping("/users")
 	public List<Users> list(){
@@ -39,12 +49,13 @@ public class UsersController {
 	}
 	
 	@PostMapping("/users/signup")
-	public ResponseEntity<Boolean> add(@RequestBody Users users) {
+	public ResponseEntity<Boolean> add(@RequestBody Users users) throws MessagingException, IOException, TemplateException {
 		if(service.checkuser(users.getEmail()) == true) {
 			return new ResponseEntity<Boolean>(false,HttpStatus.OK);
 		}
 		else {
 			service.save(users);
+			mailservice.signupMail(users);
 			return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 		}	
 	}

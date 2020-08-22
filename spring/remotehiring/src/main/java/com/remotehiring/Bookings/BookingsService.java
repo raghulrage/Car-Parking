@@ -29,7 +29,7 @@ public class BookingsService {
 	public Bookings add(Bookings booking) {
 		
 		Bookings currentBooking =  repo.save(booking);		
-		mailservice.sendEmail(currentBooking);
+//		mailservice.sendEmail(currentBooking);
 		slotservice.updateSlot(booking);
 		return currentBooking;
 	}
@@ -44,6 +44,7 @@ public class BookingsService {
 	}
 	
 	public boolean endBooking(Integer bookingid) {
+		
 		repo.endBooking(bookingid);
 		
 		String[] time1 = getTime();

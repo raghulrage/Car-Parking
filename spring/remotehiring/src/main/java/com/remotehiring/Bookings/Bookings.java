@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Bookings {
 	private Integer bookingid;
@@ -18,7 +19,6 @@ public class Bookings {
 	private Integer locationid;
 	private String slotid;
 	private Integer paid = 0;
-	
 	
 	public Bookings() {
 
@@ -107,6 +107,6 @@ public class Bookings {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
+
 	
 }

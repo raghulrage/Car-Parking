@@ -3,7 +3,6 @@ package com.remotehiring.Locations;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.Entity;
 
 @Entity
@@ -12,6 +11,7 @@ public class Locations {
 	private String location_name;
 	private Integer slots = 0;
 	private String area;
+	
 	public Locations() {
 	}
 	
