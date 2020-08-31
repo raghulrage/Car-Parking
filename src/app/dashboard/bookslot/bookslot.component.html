@@ -27,7 +27,7 @@
                             <div class="col-md-12 m-2">
                                     <input class="input" type="text" [(ngModel)]="bookingdetails.vehicle_no" name="vehicle_no" placeholder="Vehicle Number" autocomplete="off" required>
 
-                                    <small>Format: TN-01-AA-1111</small>
+                                    <small>FORMAT: TN-01-AA-1111</small>
                             </div>
                             <!-- end vehicle number -->
 
@@ -36,6 +36,8 @@
                                 <div class="row m-2">
                                     <div>
                                         Select Time: <input type="time" id="time" [(ngModel)]="bookingdetails.time" name="time">
+                                        <br>
+                                        <small>NOTE: Book 2 hours earlier</small>
                                     </div>            
                                 </div>
                             </div>

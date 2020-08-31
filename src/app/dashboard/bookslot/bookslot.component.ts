@@ -57,10 +57,30 @@ export class BookslotComponent implements OnInit {
       alert('Kindly fill all the data')
       return
     } 
+    if (!this.checkTime(this.bookingdetails.time)){
+      alert("OOPS!! Try booking 2 hours earlier..")
+      return
+    }
     this.bookings.addBooking(this.locationid, this.bookingdetails)
     .subscribe((data:{}) => {
       alert('Slot Booked');
       this.router.navigate(['/dashboard'])
     })
+  }
+
+  checkTime(bookingTime){
+
+  var currentTime = new Date();
+  
+  var ISTTime = new Date(currentTime.getTime() + (330 + currentTime.getTimezoneOffset())*60000)
+  ISTTime.setHours(ISTTime.getHours()+2)
+  
+  var time = bookingTime.split(':')
+  var h = parseInt(time[0])
+  var m = parseInt(time[1])
+  if (h<ISTTime.getHours() || (h == ISTTime.getHours() && m < ISTTime.getMinutes())){
+      return false
+  }
+    return true;
   }
 }
