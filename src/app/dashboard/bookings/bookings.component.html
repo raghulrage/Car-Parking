@@ -14,35 +14,30 @@
                             <div *ngIf='!show'>
                                 <div *ngFor='let booking of bookings$'  class="card">
                                     <div class="card-header" id="headingTwo">
-                                          <div class="row">
-                                              <div class="col-md-3">
-                                                  <h3>{{booking.locationid}}</h3>
-                                              </div>
-                                              <div class="col-md-7">
-                                                  <h3>{{booking.date}}</h3>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h3><b>Location :</b> {{booking.locationid}}</h3>
                                             </div>
-                                                <div class="col-md-2">
-                                                  <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                   View Details
-                                                   </button>
-                                                </div>
+                                            <div class="col-md-7">
+                                                <h3><b>Date :</b> {{booking.date}}</h3>
                                             </div>
                                         </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    </div>
+                                    <div>
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="col">
-                                                  Location: location1 <br> 
-                                                  Vehicle Type: Two wheeler <br> 
-                                                  Duration: {{booking.duration}} hours <br> 
+                                                <div class="col-auto mr-auto">
+                                                  <b>Slot No :</b> {{booking.slotid}} <br> 
+                                                  <b>Vehicle Type :</b> {{booking.vehicle_type}} <br> 
+                                                  <b>Duration :</b> {{booking.duration}} hours <br> 
                                                   <div *ngIf="booking.paid != 0">
-                                                    Cost: {{booking.cost}} rupees
+                                                    <b>Cost :</b> {{booking.cost}} rupees
                                                   </div>
                                                 </div>
-                                                <div class="col" *ngIf='booking.paid == 0'>
+                                                <div class="col-auto" *ngIf='booking.paid == 0'>
                                                   <button class="button" (click) = 'endBooking(booking.bookingid)'> End Book</button>
                                                 </div>
-                                                <div class="col" *ngIf='booking.paid != 0'>
+                                                <div class="col-auto" *ngIf='booking.paid != 0'>
                                                     <p class="text-success font-weight-bold">Booking Completed</p>
                                                   </div>
                                             </div>  
@@ -63,3 +58,5 @@
         </div>
     </div>
 </div>
+
+

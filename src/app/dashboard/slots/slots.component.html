@@ -10,34 +10,31 @@
       <div class="col-md-12">
         <div class="row mb-3">
           <div class="col-md-12 overflow-auto" style="height: 35rem;">
-            <div class="accordion" id="accordionExample">
+            <div>
               <div *ngFor='let location of locations$' class="card">
-                <div class="card-header flex-row" id="headingOne">
+                <div class="card-header flex-row" >
                   <div class="row">
                     <div class="col-md-3">
-                      <h3>{{location.locationid}}. {{location.location_name}}</h3>
+                      <h2><b>{{location.location_name}}</b></h2>
                     </div>
                     <div class="col-md-7">
-                      <h3>Total Slots : {{location.slots}}</h3>
-                    </div>
-                    <div class="col-md-2">
-                      <button class="button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne">
-                        View
-                      </button>
+                      <h3><b>Total Slots :</b> {{location.slots}}</h3>
                     </div>
                   </div>
                 </div>             
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col">
+                      <div class="col-auto mr-auto">
                         <h4><b> Location Address:</b></h4> <p>{{location.area}}</p>
-                        <h4><b> Price per hour </b></h4>
+                        <hr>
+                        <h4><b> Price Per Hour </b></h4>
                         <div *ngFor='let vehicle of vehicles$'>
                           <p>{{vehicle.vehicle_type}} : {{vehicle.cost}} Rs</p>
                         </div>
                       </div>
-                      <div class="col">
+                      
+                      <div class="col-auto">
                         <button class="button" type="button" routerLink="/dashboard/bookslot/{{location.locationid}}">
                           Book Now
                         </button>
