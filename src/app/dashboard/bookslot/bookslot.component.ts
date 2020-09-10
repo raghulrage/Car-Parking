@@ -13,6 +13,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class BookslotComponent implements OnInit {
 
+    load : boolean;
     vehicles$: Vehicle[];
     slots$: Slots[];
     locationid = this.actRoute.snapshot.params['locationid'];
@@ -37,6 +38,7 @@ export class BookslotComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit(): void {
+    this.load = false;
     this.getVehicles();
     this.getSlotById();
   }
@@ -61,10 +63,11 @@ export class BookslotComponent implements OnInit {
       alert("OOPS!! Try booking 2 hours earlier..")
       return
     }
+    this.load = true;
     this.bookings.addBooking(this.locationid, this.bookingdetails)
     .subscribe((data:{}) => {
       alert('Slot Booked');
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/dashboard/bookings'])
     })
   }
 
