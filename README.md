@@ -1,5 +1,7 @@
 # CarParking
 
+Project Video Link [Drive Link](https://drive.google.com/file/d/1dd2woMlVcwWqkbzumyzg_ngGne8erQON/view?usp=sharing)
+
 # Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
