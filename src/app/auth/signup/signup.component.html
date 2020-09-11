@@ -56,14 +56,18 @@
                     <div class="m-1">
                         <input class="input form-control" type="Password" formControlName="confPassword" [ngClass]="{ 'is-invalid':form.get('confPassword').touched && form.get('confPassword').invalid }" formControlName="confPassword" placeholder="Confirm Password">
                         <div class="invalid-feedback">
-                            <div>
+                            <div *ngIf="form.get('confPassword').errors?.required">
                                 This Field is required!!
+                            </div>
+                            <div *ngIf="form.get('confPassword').errors?.isError">
+                                Password does not match!!
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 mt-2 mb-5 d-flex flex-row justify-content-center">
                     <div class="m-1 mt-4">
+                        <button class="button" type="reset">Reset</button>
                         <button class="button" [disabled]="!form.valid">Sign Up</button>
                     </div>
                 </div>
